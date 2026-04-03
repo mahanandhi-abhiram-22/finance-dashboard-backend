@@ -1,0 +1,26 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Finance Backend API",
+    "version": "1.0.0",
+    "description": "Minimal API for finance dashboard assignment"
+  },
+  "paths": {
+    "/users/login": {
+      "post": {
+        "summary": "Login",
+        "requestBody": { "required": true },
+        "responses": { "200": { "description": "Token" } }
+      }
+    },
+    "/transactions": {
+      "get": { "summary": "List transactions (supports page & pageSize)" },
+      "post": { "summary": "Create transaction (admin)" }
+    },
+    "/transactions/{id}": {
+      "patch": { "summary": "Update transaction (admin)" },
+      "delete": { "summary": "Delete transaction (admin)" }
+    },
+    "/dashboard/summary": { "get": { "summary": "Get aggregated dashboard summary (analyst/admin)" } }
+  }
+}
